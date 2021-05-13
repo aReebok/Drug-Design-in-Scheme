@@ -1,6 +1,17 @@
 ;; Scheme implementation of Drug Design.
 ;; by Areeba Khan
 
+;; USAGE:
+;; 1. first make changes to default values. 
+;; 2. run the following in the terminal
+;;  ./scheme
+;;  (load "dd_serial.scm")
+;;  (main)
+;;
+;; OUTPUT will be:
+;; the maximal value 
+;; followed by the list of corresponding ligands.
+
 ;; modules and previously created files
 (use-modules (rnrs))
 (load "dd_helper.scm")
@@ -11,6 +22,11 @@
 (define DEFAULT_max_ligand 4)
 (define DEFAULT_nligands 20)
 (define DEFUALT_protein "the cat in the hat wore the hat to the cat hat party")
+
+; make changes to default values here: (uncomment them)
+;(define DEFAULT_max_ligand INT)
+;(define DEFAULT_nligands INT)
+;(define DEFUALT_protein STRING)
 
 
 (define main 
@@ -35,27 +51,19 @@
           (else 
             (do-map-helper (cdr l) p (push-back ps (Pair (score (car l) p) (string-join (car l)))))))))
 
-; (define do_reduce 
-; take list pairs => smaller list of pairs with highest scores -- 
-; (3 ("abcdefg" "xyz3"))
-; (4 ("that one" "xyzxyz"))
-; ; )
-; (list (car '(1 (1 2 3 4 5))) (append (car(cdr '(1 (1 2 3 4 5)))) (list 200)))
-
-
 (define do-reduce
   (lambda (vector)
-    (display "-----\nVector: ")
-    (display vector)
-    (display "\n -----\nReduce")
-    (do-reduce-helper vector (list (car (car vector)) '()))))
+    ;(display "-----\nVector: ")
+    ;(display vector)
+    ;(display "\n -----\nReduce")
+    (do-reduce-helper vector (list (caar vector) '()))))
 ; caar 
 (define do-reduce-helper
 (lambda (vector lst)
     (cond ((null? vector) lst) 
-          ((< (car (car vector)) (car lst)) 
+          ((< (caar vector) (car lst)) 
               (do-reduce-helper (cdr vector) lst)) ;skip iteration
-          ((= (car (car vector)) (car lst)) 
+          ((= (caar vector) (car lst)) 
               (do-reduce-helper (cdr vector) 
                   (list (car lst) (append (car(cdr lst)) (list(cdr (car vector)))))))
           (else ; greater than, then recall do-reduce 

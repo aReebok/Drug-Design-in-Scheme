@@ -37,3 +37,14 @@
 ;; -----------------------: --------------------------------------------
 ;; score function:
 ;;
+
+
+(define (split lst at)
+  (define (iter n l i)
+    (if (or (null? l) (= i at))
+      (cons (reverse n) l)
+      (iter (cons (car l) n) (cdr l) (+ i 1))
+    )
+  )
+  (iter '() lst 0)
+)  

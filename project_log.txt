@@ -54,6 +54,9 @@ sat 05/15 - 6:00
     I spent a lot of time timing the code in "time_analysis.scm" when it 
     finally worked. 
 
-sun 05/16 - 1:00
+sun 05/16 - 3:40
     I worked on making the video/timing/writing the potential reasons for 
-    the value. Also worked on writing the final plan document. 
+    the value. Also worked on writing the final plan document. I created
+    a ppt for video and also made some more time tests to get more data
+    (on another machine).Also spent some time editing the video to make 
+    sure that it's 3 mins long total!

@@ -34,30 +34,31 @@
     ("k") ("w" "r") ("g" "d" "z") ("d" "y" "q" "g") ("e")
     ("q" "b") ("p" "i" "f") ("f" "w" "v" "j" "q") ("n") ("m" "v" "i" "u")
     ("h" "e" "o" "k") ("x" "j" "m") ("h") ("n" "q") ("u") 
-    ("v" "n") ("p" "f" "e") ("i" "z" "h" "b" "q") ("l" "m") ("c" "p" "g" "c")
+    ("v" "n") ("p" "f" "e") ("i" "z" "h" "b" "q") ("l" "m") ("c" "p" "g" "c")))
     
-    ("p") ("i" "n" "r") ("i" "z") ("n" "d" "a") ("i") 
-    ("u") ("t") ("c") ("l" "b" "r" "o" "l") ("x" "i" "n") 
-    ("y" "f" "l" "t") ("z" "e" "o") ("b" "d" "p" "t") ("n") ("h" "t" "m" "k") 
-    ("u" "q" "n" "a" "r") ("m" "l" "x" "a" "w") ("c") ("m" "w" "y" "e") ("o" "w" "f" "f") 
-    ("w" "d" "e" "d") ("z" "c" "e" "p" "c") ("l" "c" "o" "i" "i") ("n") ("z" "j") 
+    ;("p") ("i" "n" "r") ("i" "z") ("n" "d" "a") ("i") 
+    ;("u") ("t") ("c") ("l" "b" "r" "o" "l") ("x" "i" "n") 
+    ;("y" "f" "l" "t") ("z" "e" "o") ("b" "d" "p" "t") ("n") ("h" "t" "m" "k") 
+    ;("u" "q" "n" "a" "r") ("m" "l" "x" "a" "w") ("c") ("m" "w" "y" "e") ("o" "w" "f" "f") 
+    ;("w" "d" "e" "d") ("z" "c" "e" "p" "c") ("l" "c" "o" "i" "i") ("n") ("z" "j") 
     
-    ("v" "m") ("d" "f" "t" "z" "h") ("q" "t" "u" "s" "y") ("p" "a" "l") ("n" "i" "u" "n" "k") 
-    ("i" "e" "b" "y") ("s" "i" "b" "q" "y") ("u" "l" "w") ("c" "j" "n" "j") ("g" "l") 
-    ("a" "q" "v" "e" "m") ("d" "j" "n" "e" "w") ("p" "m" "o" "f") ("s" "p") ("w" "v" "c" "f") 
-    ("x" "t" "a" "l") ("m" "f" "m") ("s" "r" "z" "d") ("n" "x" "f" "t" "q") ("c") 
-    ("a" "c" "c" "x") ("o" "a" "r" "f") ("b" "j" "l") ("a" "b" "v" "c" "g") ("k")
+    ;("v" "m") ("d" "f" "t" "z" "h") ("q" "t" "u" "s" "y") ("p" "a" "l") ("n" "i" "u" "n" "k") 
+    ;("i" "e" "b" "y") ("s" "i" "b" "q" "y") ("u" "l" "w") ("c" "j" "n" "j") ("g" "l") 
+    ;("a" "q" "v" "e" "m") ("d" "j" "n" "e" "w") ("p" "m" "o" "f") ("s" "p") ("w" "v" "c" "f") 
+    ;("x" "t" "a" "l") ("m" "f" "m") ("s" "r" "z" "d") ("n" "x" "f" "t" "q") ("c") 
+    ;("a" "c" "c" "x") ("o" "a" "r" "f") ("b" "j" "l") ("a" "b" "v" "c" "g") ("k")
     
-    ("z" "v" "q" "c") ("z") ("r") ("w" "f" "u" "e") ("d" "n" "x" "m") 
-    ("d" "l") ("n" "d" "n" "v" "y") ("j" "o" "b" "e") ("w" "y" "d" "w") ("k" "z" "z" "w" "i") 
-    ("j") ("x" "v") ("d" "a") ("s" "j" "y" "z") ("n" "d" "s" "m") 
-    ("m" "e" "f" "u") ("g" "f" "s" "i") ("p") ("p" "a" "v") ("v" "g") 
-    ("j" "x" "f" "c" "l") ("d" "w" "s" "i" "b") ("y" "v" "s" "a") ("l" "c" "a" "w") ("r" "z")))
+    ;("z" "v" "q" "c") ("z") ("r") ("w" "f" "u" "e") ("d" "n" "x" "m") 
+    ;("d" "l") ("n" "d" "n" "v" "y") ("j" "o" "b" "e") ("w" "y" "d" "w") ("k" "z" "z" "w" "i") 
+    ;("j") ("x" "v") ("d" "a") ("s" "j" "y" "z") ("n" "d" "s" "m") 
+    ;("m" "e" "f" "u") ("g" "f" "s" "i") ("p") ("p" "a" "v") ("v" "g") 
+    ;("j" "x" "f" "c" "l") ("d" "w" "s" "i" "b") ("y" "v" "s" "a") ("l" "c" "a" "w") ("r" "z")))
 
 
 (define main 
   (lambda () 
-    (do-reduce(make-list (par-map 
+    (do-reduce(make-list 
+    (par-map 
         start-map 
             (cons (car(split task1 half_len))
             (cons (cdr(split task1 half_len)) '())) )))))
@@ -66,11 +67,10 @@
     (lambda (lst)
         ;(display lst)
         (append (car lst) (car(cdr lst)))))
+
 (define start-map
     (lambda (lst)  
-        (do-map lst (string-split DEFUALT_protein) '())
-    )
-)
+        (do-map lst (string-split DEFUALT_protein) '())))
 
 ;; MAP AND REDUCE FUNC---------------
 (define do-map

@@ -14,6 +14,7 @@
 
 ;; modules and previously created files
 (use-modules (rnrs))
+(use-modules (time))
 (load "dd_helper.scm")
 (load "dd_ds.scm")
 (load "dd_algorithm.scm")

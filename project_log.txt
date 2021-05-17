@@ -1,0 +1,59 @@
+tue 05/04 - 4:30 
+    worked on looking at dd_serial.cpp, looked up modules that parallelize
+    scheme code, read the drug design documentation on macalester's webpage.
+    Worked on scheme code: finished these  - 
+        generate-tasks 
+        functions in "dd_helper.scm" 
+        score (does not completely work) 
+        functions in "dd_algorithm.scm"
+
+wed 05/05 - 1:30 
+    worked on making score give correct output for a know ligand (it works
+    now).
+
+thu 05/06 - no work
+
+fri 05/07 - 2:00 
+    Started working on the data structures: created "dd_ds.scm" which has
+    the needed definitions of queue methos, vector<pair> methods, and pair
+    methods (these work). 
+
+sat 05/08 - no work 
+sun 05/09 - no work 
+mon 05/10 - 3:00
+    here I implemented the map function that applies score function to all
+    the ligands. there is some issues with it, so I will have to work on it
+    more tomorrow. 
+
+tue 05/11 - 2:00
+    I finished the Map functionality today, so now the only things left are
+    reduce and sort.
+
+wed 05/12 - 1:00
+    It was relatively easier to make the reduce function after talking with 
+    RAB. I didn't have to make the sort function either which saved a lot of
+    time. 
+
+thu 05/13 - 6:30 (finished the sequential scheme code - "dd_serial.scm")
+    staring to use paralleization. I tried to make work with the Futures
+    and touch module in file "dd_p1.scm". It seems to have worked to be
+    able to compile; however, while timing it, it clearly looks like its
+    not any faster than "dd_serial.scm"
+
+fri 05/14 - 00:40 
+    during class time worked on looking up the number of cores that scheme
+    uses for the par-map uses (it's 4). I also looked up more examples of 
+    paralleization in scheme using different method.
+    Added a split list method to "dd_helper.scm"
+
+sat 05/15 - 6:00
+    tried multiple ways to parallelize using par-map (a lot of debugging).
+    I got it to work, though again it seems to be overall way slower...So 
+    I worked on it some more where I was able to get it to be only 3-5sec
+    faster than the serial scheme code. 
+    I spent a lot of time timing the code in "time_analysis.scm" when it 
+    finally worked. 
+
+sun 05/16 - 1:00
+    I worked on making the video/timing/writing the potential reasons for 
+    the value. Also worked on writing the final plan document. 

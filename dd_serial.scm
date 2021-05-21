@@ -54,7 +54,7 @@
 (define main 
   (lambda () 
     (do-reduce (do-map 
-            task1
+            task5
             (string-split DEFUALT_protein) '())) ))
 
 ;;maximum  3 inputs, first two are integers and 3rd is a string. Or no input at all. use cond to get input == 1;2;3 or else display usage error

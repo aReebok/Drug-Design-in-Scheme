@@ -60,8 +60,8 @@
     (do-reduce(make-list 
     (par-map 
         start-map 
-            (cons (car(split task1 half_len))
-            (cons (cdr(split task1 half_len)) '())) )))))
+            (cons (car(split task5 half_len))
+            (cons (cdr(split task5 half_len)) '())) )))))
 
 (define make-list
     (lambda (lst)

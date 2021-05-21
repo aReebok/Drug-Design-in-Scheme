@@ -1,0 +1,21 @@
+/* redoing time analysis with time.scm implemented */
+
+-------------------------
+
+num ligands = 25
+ligands len = 5
+dd-t-serial     (0 0 3)
+dd-t-parallel   (0 0 3)
+-------------------------
+
+num ligands = 50
+ligands len = 5
+dd-t-serial     (0 0 7)
+dd-t-parallel   (0 0 7)
+-------------------------
+
+num ligands = 100
+ligands len = 5
+dd-t-serial     (0 0 22)
+dd-t-parallel   (0 0 22)
+-------------------------

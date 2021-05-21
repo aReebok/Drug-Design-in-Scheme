@@ -35,7 +35,7 @@
     (display "\n")
     (display "Program output: ")
     (display (do-reduce (do-map 
-                 task1 (string-split DEFUALT_protein) '()))) 
+                 task5 (string-split DEFUALT_protein) '()))) 
             (display "\n ")
     (set! endT (localtime (current-time)))
     (display "Start time: ")

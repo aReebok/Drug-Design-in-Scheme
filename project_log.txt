@@ -60,3 +60,15 @@ sun 05/16 - 3:40
     a ppt for video and also made some more time tests to get more data
     (on another machine).Also spent some time editing the video to make 
     sure that it's 3 mins long total!
+
+thurs 05/20 - 2:20
+    I worked on doing research on what to use for timing. I looked into mit 
+    scheme and into other timing documentations such as in Racket. I still 
+    dont know how to get it to work. 
+    I have also worked on planning how to reduce the scheme code in a new
+    document. To make it scheme like.
+
+Friday 05/21 - 7:10
+    Made changes to plan document. Created the video. Had some issue with WSL
+    that i didnt know how to fix so this took a chuck of time. Also here I was
+    able to work on making the scheme more compressed. 

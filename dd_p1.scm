@@ -17,6 +17,7 @@
 (load "dd_helper.scm")
 (load "dd_ds.scm")
 (load "dd_algorithm.scm")
+(load "tasks.scm")
 
 ; global variables
 (define DEFAULT_max_ligand 5)

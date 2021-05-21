@@ -20,11 +20,21 @@
             (cons (- (vector-ref vector2 1) (vector-ref vector1 1))
                 (cons (- (vector-ref vector2 0) (vector-ref vector1 0)) '())) )))
 
+(define return-time 
+    (lambda (lst sum) 
+        (cond ((= (length lst) 3) (return-time (cdr lst) (+ (* (car lst) 3600) sum) ))
+                ( (= (length lst) 2) (return-time (cdr lst) (+ (* (car lst) 60) sum)) )
+                (else 
+                    (+ (car lst) sum)
+                    )
+        )
+    ))
+
 (define time 
     (lambda (l2 l1) 
-        (display "runtime: h::m::s\n")
+        (display "runtime: in seconds\n")
         (display ">>       ")
-        (time-diff l2 l1)))
+        (return-time (time-diff l2 l1) 0) ))
 
 ; (define subtract (lambda (l2 l1) 
 ;     ; (display "start time1: ")

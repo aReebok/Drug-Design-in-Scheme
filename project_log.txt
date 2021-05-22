@@ -71,4 +71,10 @@ thurs 05/20 - 2:20
 Friday 05/21 - 7:10
     Made changes to plan document. Created the video. Had some issue with WSL
     that i didnt know how to fix so this took a chuck of time. Also here I was
-    able to work on making the scheme more compressed. 
+    able to work on making the scheme just slightly more compressed.
+    I spent a lot of time on creating a timing system. For some reason, it was
+    very hard to get the documentation to work: there were no examples, so I 
+    was having a tough time getitng it to work since there were no examples. 
+    Also alot of the tests ran for minutes (some going up taking 10 minutes
+    per run). I also tried working in MIT-Scehme instead of guile, so I tested
+    around on that too for around an hour. 

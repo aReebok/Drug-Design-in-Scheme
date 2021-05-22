@@ -1,8 +1,8 @@
 ; in this file i explore the timing documentation on Guile scheme:
 ; https://www.gnu.org/software/guile/manual/html_node/Time.html
 
-(define startT )
-(define endT )
+(define startT)
+(define endT)
 
 ; (set! localt1  (localtime (current-time)))
 ; (set! localt2 (localtime (current-time)))
@@ -25,15 +25,12 @@
         (cond ((= (length lst) 3) (return-time (cdr lst) (+ (* (car lst) 3600) sum) ))
                 ( (= (length lst) 2) (return-time (cdr lst) (+ (* (car lst) 60) sum)) )
                 (else 
-                    (+ (car lst) sum)
-                    )
-        )
-    ))
+                    (+ (car lst) sum)))))
 
 (define time 
     (lambda (l2 l1) 
         (display "runtime: in seconds\n")
-        (display ">>       ")
+        (display ">>  ")
         (return-time (time-diff l2 l1) 0) ))
 
 ; (define subtract (lambda (l2 l1) 

@@ -42,6 +42,8 @@ dd-t-parallel   238 229 239
 num ligands = 50
 ligands len = 6
                 t1  t2  t3
-dd-t-serial     798 
-dd-t-parallel   605
+dd-t-serial     798 428 811
+dd-t-parallel   605 411 635
+-------------------------
+-------------------------
 -------------------------

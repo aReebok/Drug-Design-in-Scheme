@@ -6,7 +6,6 @@ Thoughts:
 Presetation slides: https://docs.google.com/presentation/d/1vmdLWFapsJwq-ldD9Xce0x__LMxxhwMqkxUoGVayCu4/edit?usp=sharing
 
 redoing time analysis with time.scm implemented 
-
 /*
     IMPORTANT NOTE: 
     A lot of the timeigs were recorded in a spreadsheet 

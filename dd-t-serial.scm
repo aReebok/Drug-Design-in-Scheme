@@ -37,9 +37,9 @@
     (display "Program output: ")
     (display (do-reduce (do-map 
                  task4 (string-split DEFUALT_protein) '()))) 
-            (display "\n ")
+            (display "\n")
     (set! endT (localtime (current-time)))
-    (display "Start time: ")
+    (display "End time: ")
     (display (strftime "%c" endT))
     (display "\n")
     ;; ----------------------------------------

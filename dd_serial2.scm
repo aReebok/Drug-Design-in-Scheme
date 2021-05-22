@@ -14,73 +14,66 @@
 
 ;; modules and previously created files
 (use-modules (rnrs))
-(use-modules (ice-9 threads))
-
 (load "dd_helper.scm")
 (load "dd_ds.scm")
 (load "dd_algorithm.scm")
-(load "time.scm")
-(load "time-run.scm")
 (load "tasks.scm")
-
-
 
 ; global variables
 (define DEFAULT_max_ligand 5)
 (define DEFAULT_nligands 20)
-(define half_len (/ DEFAULT_nligands 2))
 (define DEFUALT_protein "the cat in the hat wore the hat to the cat hat party")
+
+(define task1 
+    '(("c" "h" "m" "y" "m") ("o" "o" "z") ("r" "j") ("r" "e" "u" "w" "t") ("t" "g")
+    ("k") ("w" "r") ("g" "d" "z") ("d" "y" "q" "g") ("e")
+    ("q" "b") ("p" "i" "f") ("f" "w" "v" "j" "q") ("n") ("m" "v" "i" "u")
+    ("h" "e" "o" "k") ("x" "j" "m") ("h") ("n" "q") ("u") 
+    ("v" "n") ("p" "f" "e") ("i" "z" "h" "b" "q") ("l" "m") ("c" "p" "g" "c")
+    
+    ("p") ("i" "n" "r") ("i" "z") ("n" "d" "a") ("i") 
+    ("u") ("t") ("c") ("l" "b" "r" "o" "l") ("x" "i" "n") 
+    ("y" "f" "l" "t") ("z" "e" "o") ("b" "d" "p" "t") ("n") ("h" "t" "m" "k") 
+    ("u" "q" "n" "a" "r") ("m" "l" "x" "a" "w") ("c") ("m" "w" "y" "e") ("o" "w" "f" "f") 
+    ("w" "d" "e" "d") ("z" "c" "e" "p" "c") ("l" "c" "o" "i" "i") ("n") ("z" "j") ))
+
+(define task2
+    '(("v" "m") ("d" "f" "t" "z" "h") ("q" "t" "u" "s" "y") ("p" "a" "l") ("n" "i" "u" "n" "k") 
+    ("i" "e" "b" "y") ("s" "i" "b" "q" "y") ("u" "l" "w") ("c" "j" "n" "j") ("g" "l") 
+    ("a" "q" "v" "e" "m") ("d" "j" "n" "e" "w") ("p" "m" "o" "f") ("s" "p") ("w" "v" "c" "f") 
+    ("x" "t" "a" "l") ("m" "f" "m") ("s" "r" "z" "d") ("n" "x" "f" "t" "q") ("c") 
+    ("a" "c" "c" "x") ("o" "a" "r" "f") ("b" "j" "l") ("a" "b" "v" "c" "g") ("k")
+    
+    ("z" "v" "q" "c") ("z") ("r") ("w" "f" "u" "e") ("d" "n" "x" "m") 
+    ("d" "l") ("n" "d" "n" "v" "y") ("j" "o" "b" "e") ("w" "y" "d" "w") ("k" "z" "z" "w" "i") 
+    ("j") ("x" "v") ("d" "a") ("s" "j" "y" "z") ("n" "d" "s" "m") 
+    ("m" "e" "f" "u") ("g" "f" "s" "i") ("p") ("p" "a" "v") ("v" "g") 
+    ("j" "x" "f" "c" "l") ("d" "w" "s" "i" "b") ("y" "v" "s" "a") ("l" "c" "a" "w") ("r" "z")))
+
 
 (define main 
   (lambda () 
-    (set! startT (localtime (current-time)))
-    (display "Start time: ")
-    (display (strftime "%c" startT))
-    (display "\n")
-    (display "Program output: ")
+    (do-reduce (do-map 
+            task1
+            (string-split DEFUALT_protein) '())) ))
 
-    (display (do-reduce(make-list 
-    (par-map 
-        start-map 
-            (cons (car(split task4 half_len))
-            (cons (cdr(split task4 half_len)) '())) ))))
-
-    (display "\n")
-    (set! endT (localtime (current-time)))
-    (display "End time: ")
-    (display (strftime "%c" endT))
-    (display "\n")
-    ;; ----------------------------------------
-    (display (time endT startT)) 
-    (display "\n----end of P program-----\n-------------------------")
-    (display "\n")
-    ))
-
-(define make-list
-    (lambda (lst)
-        ;(display lst)
-        (append (car lst) (car(cdr lst)))))
-
-(define start-map
-    (lambda (lst)  
-        (do-map lst (string-split DEFUALT_protein) '())))
+;;maximum  3 inputs, first two are integers and 3rd is a string. Or no input at all. use cond to get input == 1;2;3 or else display usage error
 
 ;; MAP AND REDUCE FUNC---------------
 (define do-map
   (lambda (ligands protein pairs) ;; takes in list of ligands, protein strand, and vector<Pair> pairs     
     ;; now to loop through all the ligands. 
-
-    (do-map-helper (cdr ligands) protein (get-first-vector (car ligands) protein)) ))
+    (do-map-helper (cdr ligands) protein (get-first-vector (car ligands) protein))))
 
 (define get-first-vector
   (lambda (ligand protein)  
     (vector-pair (Pair (score ligand protein) (string-join ligand)))))
 
 (define do-map-helper 
-  (lambda (l p ps)
-    (cond ((null? l) ps)
+  (lambda (ligands protein pairs)
+    (cond ((null? ligands) pairs)
           (else 
-            (do-map-helper (cdr l) p (push-back ps (Pair (score (car l) p) (string-join (car l)))))))))
+    (do-map-helper (cdr ligands) protein (push-back pairs (Pair (score (car ligands) protein) (string-join (car ligands))))) ))))
 
 (define do-reduce
   (lambda (vector)
@@ -89,8 +82,9 @@
     ;(display "\n -----\nReduce")
     (do-reduce-helper vector (list (caar vector) '()))))
 
+ 
 (define do-reduce-helper
-(lambda (vector lst)
+    (lambda (vector lst)
     (cond ((null? vector) lst) 
           ((< (caar vector) (car lst)) 
               (do-reduce-helper (cdr vector) lst)) ;skip iteration
@@ -108,8 +102,8 @@
 (define generate-tasks 
   (lambda (queue nligands max-ligand)
     (cond ((= nligands 0) '())
-          (else (push
-                  (generate-tasks queue (- nligands 1) max-ligand)
+          (else (push 
+                  (generate-tasks queue (- nligands 1) max-ligand) 
                   (get-ligand max-ligand))))))
 
 (define score 

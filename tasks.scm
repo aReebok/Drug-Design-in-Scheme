@@ -100,7 +100,7 @@
     ("m" "q" "o" "u" "p") ("p" "c" "i" "t" "i" "o") ("f") ("m" "o" "b" "e" "c" "u") ("o" "x" "d") 
     ("p" "t" "k" "k" "c") ("b" "t" "x" "h" "m") ("d" "c" "w" "c" "h") ("g" "i" "v" "k" "m") ("i")
 
-    ;("k" "r" "x" "k") ("s") ("f" "z" "c" "r") ("h" "v" "c") ("i")  -- these would take way too long
+    ;("k" "r" "x" "k") ("s") ("f" "z" "c" "r") ("h" "v" "c") ("i")  ;-- these would take way too long
     ;("y" "g" "r") ("g" "p" "k") ("i" "v") ("s" "v") ("z" "x" "f" "k" "f") 
     ;("u" "z") ("l" "j" "y" "w" "j") ("b" "t" "z" "k" "o" "h") ("p" "o" "u" "w") ("p" "n")
     ;("y" "n" "p" "j" "b") ("i" "a" "j" "h" "n") ("g") ("g" "e") ("f" "f" "d" "q") 

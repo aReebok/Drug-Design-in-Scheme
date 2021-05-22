@@ -4,18 +4,44 @@
 
 num ligands = 25
 ligands len = 5
-dd-t-serial     (0 0 3)
-dd-t-parallel   (0 0 3)
+                t1  t2  t3
+dd-t-serial     25  25  27
+dd-t-parallel   22  22  21
 -------------------------
 
 num ligands = 50
 ligands len = 5
-dd-t-serial     (0 0 7)
-dd-t-parallel   (0 0 7)
+                t1  t2  t3
+dd-t-serial     49  58  54
+dd-t-parallel   46  54  50
+-------------------------
+
+num ligands = 75
+ligands len = 5
+                t1  t2  t3
+dd-t-serial     102 110 100
+dd-t-parallel   99  98  96
 -------------------------
 
 num ligands = 100
 ligands len = 5
-dd-t-serial     (0 0 22)
-dd-t-parallel   (0 0 22)
+                t1  t2  t3
+dd-t-serial     172 170 159
+dd-t-parallel   154 163 158
+-------------------------
+-------------------------
+-------------------------
+
+num ligands = 25
+ligands len = 6
+                t1  t2  t3
+dd-t-serial     259 258 246
+dd-t-parallel   238 229 239
+-------------------------
+
+num ligands = 50
+ligands len = 6
+                t1  t2  t3
+dd-t-serial     798 
+dd-t-parallel   605
 -------------------------

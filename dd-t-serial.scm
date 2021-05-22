@@ -19,6 +19,7 @@
 (load "dd_ds.scm")
 (load "dd_algorithm.scm")
 (load "time.scm")
+(load "time-run.scm")
 (load "tasks.scm")
 
 
@@ -35,7 +36,7 @@
     (display "\n")
     (display "Program output: ")
     (display (do-reduce (do-map 
-                 task5 (string-split DEFUALT_protein) '()))) 
+                 task4 (string-split DEFUALT_protein) '()))) 
             (display "\n ")
     (set! endT (localtime (current-time)))
     (display "Start time: ")

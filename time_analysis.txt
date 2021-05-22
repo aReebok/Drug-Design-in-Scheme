@@ -1,5 +1,19 @@
-/* redoing time analysis with time.scm implemented */
+Analysis: see more data at: https://docs.google.com/spreadsheets/d/1vTTcX9EjVpMA67DmTOZLshke-N7cI5u1lpVs5BJ3vOI/edit#gid=0
 
+Observations:
+Thoughts:
+
+Presetation slides: https://docs.google.com/presentation/d/1vmdLWFapsJwq-ldD9Xce0x__LMxxhwMqkxUoGVayCu4/edit?usp=sharing
+
+redoing time analysis with time.scm implemented 
+
+/*
+    IMPORTANT NOTE: 
+    A lot of the timeigs were recorded in a spreadsheet 
+    https://docs.google.com/spreadsheets/d/1vTTcX9EjVpMA67DmTOZLshke-N7cI5u1lpVs5BJ3vOI/edit#gid=0
+    Some trials are not listed here because it was easier to record them and
+    it looks more presetable on the spreadsheet! 
+*/
 -------------------------
 
 num ligands = 25
@@ -47,3 +61,24 @@ dd-t-parallel   605 411 635
 -------------------------
 -------------------------
 -------------------------
+
+num ligands = 5
+ligands len = 7
+                t1  t2  t3
+dd-t-serial     (no data: too slow)
+dd-t-parallel   
+-------------------------
+
+num ligands = 10
+ligands len = 7
+                t1  t2  t3
+dd-t-serial     (no data: too slow)
+dd-t-parallel   
+-------------------------
+/*
+    IMPORTANT NOTE: 
+    A lot of the timeigs were recorded in a spreadsheet 
+    https://docs.google.com/spreadsheets/d/1vTTcX9EjVpMA67DmTOZLshke-N7cI5u1lpVs5BJ3vOI/edit#gid=0
+    Some trials are not listed here because it was easier to record them and
+    it looks more presetable on the spreadsheet! 
+*/

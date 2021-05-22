@@ -20,6 +20,7 @@
 (load "dd_ds.scm")
 (load "dd_algorithm.scm")
 (load "time.scm")
+(load "time-run.scm")
 (load "tasks.scm")
 
 
@@ -41,8 +42,8 @@
     (display (do-reduce(make-list 
     (par-map 
         start-map 
-            (cons (car(split task5 half_len))
-            (cons (cdr(split task5 half_len)) '())) ))))
+            (cons (car(split task4 half_len))
+            (cons (cdr(split task4 half_len)) '())) ))))
 
     (display "\n ")
     (set! endT (localtime (current-time)))
